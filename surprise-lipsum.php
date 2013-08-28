@@ -127,16 +127,16 @@ class Surprise_Lipsum {
 		);
 	}
 
-	function get_lipsum() {
-		$lipsum = $this->_generate_lipsum();
+	function get_lipsum( $num = 50 ) {
+		$lipsum = $this->_generate_lipsum( $num );
 		return $lipsum;
 	}
 
-	function _generate_lipsum( $num = 50 ) {
+	function _generate_lipsum( $num_words ) {
 		$count = ''; 
 		$sentence = '';
 
-		$num = $this->_lipsum_variance( $num ); echo $num;
+		$num = $this->_lipsum_variance( $num_words ); echo $num;
 
 		while ( $count < $num ) {
 			$word = array_rand( $this->words );

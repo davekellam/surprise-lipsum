@@ -9,8 +9,8 @@ function sl_surprise_lipsum() {
  * Get lipsum
  * @return string A string of lipsum
  */
-function sl_get_lipsum() {
-	return sl_surprise_lipsum()->get_lipsum();
+function sl_get_lipsum( $num = 50 ) {
+	return sl_surprise_lipsum()->get_lipsum( $num );
 }
 
 /**
