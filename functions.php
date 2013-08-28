@@ -10,13 +10,13 @@ function sl_surprise_lipsum() {
  * @return string A string of lipsum
  */
 function sl_get_lipsum() {
-	return si_surprise_lipsum()->get_lipsum();
+	return sl_surprise_lipsum()->get_lipsum();
 }
 
 /**
  * Get lipsum and display
  */
 function sl_lipsum() {
-	$lipsum = si_surprise_lipsum()->get_lipsum();
+	$lipsum = sl_surprise_lipsum()->get_lipsum();
 	echo $lipsum;
 }
