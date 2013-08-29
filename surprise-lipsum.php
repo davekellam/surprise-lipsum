@@ -136,7 +136,7 @@ class Surprise_Lipsum {
 		$count = ''; 
 		$sentence = '';
 
-		$num = $this->_lipsum_variance( $num_words ); echo $num;
+		$num = $this->_variance( $num_words ); echo $num;
 
 		while ( $count < $num ) {
 			$word = array_rand( $this->words );
@@ -144,10 +144,17 @@ class Surprise_Lipsum {
 			$count++;
 		}
 
+		$lipsum = $this->_generate_sentence( $sentence );
+
+		return $lipsum;
+	}
+
+	function _generate_sentence( $string ) {
+		$sentence = ucfirst( $string ) . '.';
 		return $sentence;
 	}
 
-	function _lipsum_variance( $num, $variance = 0.2 ) {
+	function _variance( $num, $variance = 0.2 ) {
 		$num_low = $num - $num * $variance;
 		$num_high = $num + $num * $variance;
 
