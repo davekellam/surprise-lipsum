@@ -6,8 +6,26 @@ Description: Generate a somewhat random amount of Lipsum Text
 Author: Dave Kellam
 Author URI: http://eightface.com
 Plugin URI: http://github.com/davekellam/surprise-lipsum/
-Text Domain: surprise-lipsum
-Domain Path: /languages
+
+Copyright 2013 Dave Kellam
+
+This plugin was built by Dave Kellam, based on an idea put forth by James Young <http://www.welcomebrand.co.uk/thoughts/surprise-lipsum/>.
+
+GNU General Public License, Free Software Foundation <http://creativecommons.org/licenses/GPL/2.0/>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
 
 if ( ! class_exists( 'Surprise_Lipsum' ) ) :
