@@ -16,7 +16,7 @@ function sl_get_lipsum( $num = 50 ) {
 /**
  * Get lipsum and display
  */
-function sl_lipsum() {
-	$lipsum = sl_surprise_lipsum()->get_lipsum();
+function sl_lipsum( $num = 50 ) {
+	$lipsum = sl_surprise_lipsum()->get_lipsum( $num );
 	echo $lipsum;
 }
