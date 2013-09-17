@@ -17,18 +17,11 @@ Use somewhat random lipsum in your development process. Inspired by [James Young
 
 1. Unzip contents and upload to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Use shortcode or php function in your templates to generate lipsum
-
-== Frequently Asked Questions ==
-
-= Question
-
-Answer
-
-== Screenshots ==
+3. Use php functions in your templates to generate lipsum (located in the plugin's functions.php file).
 
 == Changelog ==
 
 = 0.1 =
 
 * Initial release
+* Generate basic strings of lipsum text
