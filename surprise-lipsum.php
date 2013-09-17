@@ -150,6 +150,13 @@ class Surprise_Lipsum {
 		return $lipsum;
 	}
 
+	function get_sentence( $num = 50 ) {
+		$lipsum = $this->_generate_lipsum( $num );
+		$lipsum = $this->_generate_sentence( $sentence );
+
+		return $lipsum;
+	}
+
 	function _generate_lipsum( $num_words ) {
 		$count = ''; 
 		$sentence = '';
@@ -162,13 +169,16 @@ class Surprise_Lipsum {
 			$count++;
 		}
 
-		$lipsum = $this->_generate_sentence( $sentence );
-
 		return $lipsum;
 	}
 
 	function _generate_sentence( $string ) {
-		$sentence = ucfirst( $string ) . '.';
+		$sentence = ucfirst( $string ); // Make first word uppercase
+
+		$sentence = rtrim( $sentence, ' ' ); // Remove trailing space
+
+		$sentence = $sentence . '.'; // Add period
+
 		return $sentence;
 	}
 
