@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Surprise Lipsum
-Version: 0.1
+Version: 0.2
 Description: Generate a somewhat random amount of Lipsum Text
 Author: Dave Kellam
 Author URI: http://eightface.com
@@ -30,7 +30,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
 if ( ! class_exists( 'Surprise_Lipsum' ) ) :
 
-define ( 'SURPRISE_LIPSUM_VERSION', '0.1' );
+define ( 'SURPRISE_LIPSUM_VERSION', '0.2' );
 define ( 'SURPRISE_LIPSUM_PATH', dirname ( __FILE__ ) );
 define ( 'SURPRISE_LIPSUM_URL', trailingslashit ( plugins_url( '', __FILE__ ) ) );
 
@@ -145,29 +145,31 @@ class Surprise_Lipsum {
 		);
 	}
 
-	function get_lipsum( $num = 50 ) {
-		$lipsum = $this->_generate_lipsum( $num );
+	function get_lipsum( $num = 50, $variance = 0.2 ) {
+		$lipsum = $this->_generate_lipsum( $num, $variance );
 		return $lipsum;
 	}
 
-	function get_sentence( $num = 50 ) {
-		$lipsum = $this->_generate_lipsum( $num );
-		$lipsum = $this->_generate_sentence( $sentence );
+	function get_sentence( $num = 50, $variance = 0.2 ) {
+		$lipsum = $this->_generate_lipsum( $num, $variance );
+		$lipsum = $this->_generate_sentence( $lipsum );
 
 		return $lipsum;
 	}
 
-	function _generate_lipsum( $num_words ) {
+	function _generate_lipsum( $num_words, $variance = 0.2 ) {
 		$count = ''; 
 		$sentence = '';
 
-		$num = $this->_variance( $num_words ); echo $num;
+		$num = $this->_variance( $num_words, $variance ); echo $num;
 
 		while ( $count < $num ) {
 			$word = array_rand( $this->words );
 			$sentence .= $this->words[$word] . ' ';
 			$count++;
 		}
+
+		$lipsum = $sentence;
 
 		return $lipsum;
 	}

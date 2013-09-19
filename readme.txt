@@ -25,6 +25,10 @@ Use somewhat random lipsum in your development process. Inspired by [James Young
 
 == Changelog ==
 
+= 0.2 =
+
+* Adding variance as a parameter
+
 = 0.1 =
 
 * Initial release
