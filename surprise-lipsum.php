@@ -143,6 +143,8 @@ class Surprise_Lipsum {
 			'eget',
 			'eros'
 		);
+
+		add_shortcode( 'slipsum', array( 'Surprise_Lipsum', '_slipsum_shortcode' ) );
 	}
 
 	function get_lipsum( $num = 50, $variance = 0.2 ) {
@@ -161,7 +163,7 @@ class Surprise_Lipsum {
 		$count = ''; 
 		$sentence = '';
 
-		$num = $this->_variance( $num_words, $variance ); echo $num;
+		$num = $this->_variance( $num_words, $variance );
 
 		while ( $count < $num ) {
 			$word = array_rand( $this->words );
@@ -191,6 +193,20 @@ class Surprise_Lipsum {
 		$new_num = rand( (int) $num_low, (int) $num_high );
 
 		return $new_num;
+	}
+
+	function _slipsum_shortcode( $atts, $content = null ) {
+		extract( shortcode_atts( array(
+			'words' => 50,
+			'variance' => 0.2
+		), $atts ) );
+
+		// Currently using public facing function from functions.php,
+		// there may be a better way to construct this (either putting
+		// the shortcode in there, or referencing an internal funciton here).
+		$lipsum = sl_get_lipsum( $words, $variance );
+
+		return $lipsum;
 	}
 }
 
