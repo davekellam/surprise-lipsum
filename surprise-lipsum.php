@@ -201,6 +201,9 @@ class Surprise_Lipsum {
 			'variance' => 0.2
 		), $atts ) );
 
+		// Currently using public facing function from functions.php,
+		// there may be a better way to construct this (either putting
+		// the shortcode in there, or referencing an internal funciton here).
 		$lipsum = sl_get_lipsum( $words, $variance );
 
 		return $lipsum;
